@@ -3,7 +3,7 @@
     <div class="login_box">
         <!--头像区域 -->
         <div class="avatar_box">
-            <img src="../assets/logo.png" alt="">
+            <img src="../assets/logo.png" alt="logo">
         </div>
         <!--登录表单区域-->
           <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
@@ -29,12 +29,14 @@
 
 <script>
 export default {
+  name: 'login',
   data () {
     return {
       // 这是登录表单的数据绑定对象
       loginForm: {
         username: 'admin',
         password: '123456'
+
       },
       // 这是表单的验证规则
       loginFormRules: {
@@ -45,7 +47,7 @@ export default {
         ],
         // 验证密码是否合法
         password: [{ required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
+          { min: 4, max: 15, message: '长度在 4 到 15 个字符', trigger: 'blur' }
         ]
       }
     }
@@ -57,11 +59,11 @@ export default {
     },
     login () {
       this.$refs.loginFormRef.validate(async vaild => {
-        // console.log(vaild)
+        // console.log('1' + vaild)
         if (!vaild) { return console.log('验证未通过') }
         // 请求数据库进行验证 并返回到解构的data中
         const { data: res } = await this.$http.post('login', this.loginForm)
-        // console.log(res)
+        console.log(res)
         if (res.meta.status !== 200) { return this.$message.error('登录失败！') }
         this.$message.success('登录成功！')
 
@@ -69,6 +71,9 @@ export default {
         // 1.1登录项目中的其他API接口，必须在登录之后才能访问
         // 1.2token 只应在当前网站 所以将 token 保存在 sessionStorage中
         window.sessionStorage.setItem('token', res.data.token)
+
+        // token 存在cookies中在一段时间内，不需要重复登录
+        // window.$cookies.set('token', res.data.jwtToken)
         // 2.通过编程式导航 跳转到后台主页，路由地址是 /home
         this.$router.push('/home')
       })
