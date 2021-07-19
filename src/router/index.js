@@ -7,6 +7,22 @@ import Home from '../views/Home.vue'
 import Welcome from '../components/welcome/Welcome.vue'
 import Users from '../components/user/Users.vue'
 
+// 权限管理
+import RightList from '../components/power/Rights.vue'
+import RolesList from '../components/power/Roles.vue'
+
+// 商品管理
+import Categories from '../components/goods/Categories.vue'
+import Params from '../components/goods/Params.vue'
+import List from '../components/goods/List.vue'
+import AddGoods from '../components/goods/AddGoods.vue'
+
+// 订单管理
+import Order from '../components/order/Order.vue'
+
+// 数据可视化
+import Report from '../components/report/Report.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -19,7 +35,15 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', component: Welcome },
-      { path: '/users', component: Users }
+      { path: '/users', component: Users },
+      { path: '/rights', component: RightList },
+      { path: '/roles', component: RolesList },
+      { path: '/categories', component: Categories },
+      { path: '/params', component: Params },
+      { path: '/goods', component: List },
+      { path: '/goods/add', component: AddGoods },
+      { path: '/orders', component: Order },
+      { path: '/reports', component: Report }
     ]
 
   }

@@ -23,7 +23,23 @@ import {
   Tooltip,
   Pagination,
   Dialog,
-  MessageBox
+  MessageBox,
+  Tag,
+  Tree,
+  Select,
+  Option,
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane,
+  Steps,
+  Step,
+  Checkbox,
+  CheckboxGroup,
+  Upload,
+  Timeline,
+  TimelineItem,
+  Notification
 } from 'element-ui'
 
 // 上面引入时可以一起引用 但是下面的use方法，只能一个一个的使用
@@ -49,6 +65,22 @@ Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
+Vue.use(Tag)
+Vue.use(Tree)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Step)
+Vue.use(Steps)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 // 挂载在Vue的实例对象中 这样使用时，只需要 .$message (这个名字可以自己随意取)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$notify = Notification

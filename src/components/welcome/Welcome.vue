@@ -25,6 +25,7 @@
 
 <script>
 
+// 引入的是echarts自带的主题
 import 'echarts/theme/macarons.js'
 
 import { lineData, cardData } from '../../comment/welcome-data.js'
@@ -144,16 +145,16 @@ export default {
               animationEasing: 'quadraticOut'
             },
             itemStyle: {
-              normal: {
+              // normal: {
+              color: '#3888fa',
+              lineStyle: {
                 color: '#3888fa',
-                lineStyle: {
-                  color: '#3888fa',
-                  width: 2
-                },
-                areaStyle: {
-                  color: '#f3f8ff'
-                }
+                width: 2
+              },
+              areaStyle: {
+                color: '#f3f8ff'
               }
+              // }
             }
           },
           {
@@ -183,13 +184,13 @@ export default {
               animationEasing: 'quadraticOut'
             },
             itemStyle: {
-              normal: {
+              // normal: {
+              color: '#FF005A',
+              lineStyle: {
                 color: '#FF005A',
-                lineStyle: {
-                  color: '#FF005A',
-                  width: 2
-                }
+                width: 2
               }
+              // }
             }
           }
         ]
