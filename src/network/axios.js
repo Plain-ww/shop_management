@@ -6,9 +6,9 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 
-// axios.defaults.baseURL = 'http://106.15.190.151:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://106.15.190.151:8888/api/private/v1/'
 
 // 添加 请求头 和 进度条 NProgress.start()
 

@@ -152,8 +152,8 @@ export default {
       // 静态属性列表数据
       onlyTableData: [],
       // 上传图片的url地址
-      uploadUrl: 'http://127.0.0.1:8888/api/private/v1/upload',
-      // uploadUrl: 'http://106.15.190.151:8888/api/private/v1/upload',
+      // uploadUrl: 'http://127.0.0.1:8888/api/private/v1/upload',
+      uploadUrl: 'http://106.15.190.151:8888/api/private/v1/upload',
       // 图片上传的请求头
       headerObj: {
         Authorization: window.sessionStorage.getItem('token')
@@ -250,8 +250,8 @@ export default {
     handlePreview (file) {
       console.log(file)
       this.previewPath = ''
-      this.previewPath = 'http://127.0.0.1:8888/' + file.response.data.tmp_path
-      // this.previewPath = 'http://106.15.190.151:8888/' + file.response.data.tmp_path
+      // this.previewPath = 'http://127.0.0.1:8888/' + file.response.data.tmp_path
+      this.previewPath = 'http://106.15.190.151:8888/' + file.response.data.tmp_path
 
       if (this.previewPath !== '') {
         this.previewVisible = true

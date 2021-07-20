@@ -7,7 +7,13 @@
         <img src="../assets/logo.png" alt="图标" style="height:65px;width:65px">
         <span>购物街-电商后台管理系统</span>
       </div>
-      <el-button type="info" @click="logout">退出</el-button>
+      <div>
+        <a href="https://github.com/Plain-ww">
+        <el-button type="primary">github<i class="el-icon-link"></i></el-button>
+        </a>
+        <el-button type="info" @click="logout">退出</el-button>
+      </div>
+
       </el-header>
     <!-- 页面主体区域 -->
     <el-container>
@@ -144,6 +150,9 @@ export default {
   > div {
     display: flex;
     align-items: center;
+    > a {
+      margin-right: 5px;
+    }
     > span {
       margin-left: 15px;
     }
